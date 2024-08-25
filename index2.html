@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="input.css">
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>Sign up for Facebook</title>
+</head>
+
+<body class="bg-gray-100">
+    <div class="w-[100%] h-[100%] flex justify-center items-center flex-col">
+        <div class="mx-auto">
+            <img src="/fb.svg" class="w-80" alt="">
+        </div>
+        <div class="my-2 mb-14 rounded-lg shadow-lg shadow-gray-400 py-2 bg-white">
+            <div class="text-center">
+                <h1 class="text-2xl font-bold py-1">Create a new account</h1>
+                <p class="text-gray-500 pb-2 -mt-1">It's quick and easy</p>
+                <hr>
+            </div>
+            <div class="middle-part flex flex-col pb-6">
+                <div class="name flex mx-2 p-2 mt-1 space-x-6">
+                    <input type="text" class="border border-gray-300 rounded-md p-2 outline-none"
+                        placeholder="First name">
+                    <input type="text" class="border border-gray-300 rounded-md p-2 outline-none" placeholder="Surname">
+                </div>
+                <input type="text" class="border border-gray-300 rounded-md p-2 my-1 outline-none mx-4"
+                    placeholder="Mobile number or email address">
+                <input type="password" class="border border-gray-300 rounded-md p-2 my-1 outline-none mx-4"
+                    placeholder="Password">
+                <label for="" class="text-sm text-gray-500 mx-4 my-1" title="Click for more information">Date of birth</label>
+                <div class="options flex items-center space-x-3">
+                    <select id="date" class="border border-gray-300 rounded-md p-2 my-1 outline-none mx-2 ml-4 w-[28.5%]">
+                    </select>
+                    <select id="month" class="border border-gray-300 rounded-md p-2 my-1 outline-none w-[28.5%]">
+                        <option value="Aug" selected>Aug</option>
+                        <option value="Sep" >Sep</option>
+                        <option value="Oct" >Oct</option>
+                        <option value="Nov" >Nov</option>
+                        <option value="Dec" >Dec</option>
+                    </select>
+                    <select id="year" class="border border-gray-300 rounded-md p-2 my-1 outline-none w-[28.5%]">
+                        <option value="2023">2023</option>
+                        <option value="2023">2023</option>
+                        <option value="2024" selected>2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                    </select>
+                </div>
+                <label for="" class="text-sm text-gray-500 mx-4 my-1">Gender</label>
+                <div class="options flex items-center space-x-3">
+                    <div class="flex justify-between border border-gray-300 rounded-md p-2 my-1 outline-none mx-2 ml-4 w-[28.5%]">
+                        <label for="" class="">Female</label>
+                        <input type="radio">
+                    </div>
+                    <div class="flex justify-between border border-gray-300 rounded-md p-2 my-1 outline-none mx-2 ml-4 w-[28.5%]">
+                        <label for="" class="">Male</label>
+                        <input type="radio">
+                    </div>
+                    <div class="flex justify-between border border-gray-300 rounded-md p-2 my-1 outline-none mx-2 ml-4 w-[28.5%]">
+                        <label for="" class="">Custom</label>
+                        <input type="radio">
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 mx-4 px-1 pl-2 w-[26.5rem] my-2">People who use our service may have uploaded your contact information to Facebook. <a href="/" class="text-blue-700 hover:underline">Learn more.</a></p>
+                <p class="text-xs text-gray-500 mx-4 px-1 pl-2 w-[26.5rem] my-2">By clicking Sign Up, you agree to our <a href="/" class="text-blue-700 hover:underline">Terms</a>, <a href="/" class="text-blue-700 hover:underline">Privacy Policy</a> and <a href="/" class="text-blue-700 hover:underline">Cookies Policy.</a> You may receive SMS notifications from us and can opt out at any time.</a></p>
+                <button class="text-xl font-bold bg-[#00a400] active:translate-y-1 py-1 rounded-md px-3 my-3 text-white w-56 text-center mx-auto">Sign Up</button>
+                <a href="/" class="text-xl text-blue-600 hover:underline text-center">Already have an account</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let dateStr = ''
+    for (let i = 1; i < 30; i++) {
+        (new Date().getDate()) === i ? dateStr += `<option value="${i}" selected>${i}</option>` : dateStr += `<option value="${i}">${i}</option>`
+    }
+    document.querySelector("#date").innerHTML = dateStr;
+</script>
+
+</html>
